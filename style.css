@@ -1,0 +1,79 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f5;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.navbar .nav-link:hover {
+  color: #ffe6eb !important;
+}
+
+.header {
+  .btn-back {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f78fb3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: none; /* disembunyikan dulu */
+}
+
+.btn-back:hover {
+  background-color: #e84393;
+}
+.btn:hover {
+  box-shadow: 0 0 12px #ff9ab9;
+  transform: scale(1.05);
+}
+
+  background-color: #ffb6c1;
+  padding: 30px 0;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.text-pink {
+  color: #c9184a;
+}
+
+.bg-pink {
+  background-color: #c9184a;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('asset/hero.jpg');
+  background-size: cover;
+  height: 80vh;
+}
+
+.btn-pink {
+  background-color: #ff91a4;
+  color: white;
+  border: none;
+}
+.btn-pink:hover {
+  background-color: #c9184a;
+}
+
+.product-card {
+  border: none;
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+footer {
+  background-color: #ff91a4;
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowSkin Beauty</title>
+   <script type="text/JavaScript"src="js/atur1.js"></script>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /*  Style Utama */
+    body {
+        body {
+      background: linear-gradient(to bottom right, #f8f9fa, #ffe0f0);}
+      font-family: 'Poppins', sans-serif;
+      background-color: #d8b3bb;
+      margin: 0;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff9ebb, #ffbcd1, #ffd6e0);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      background-color: #f2a1a1;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #ce888d;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #e84393;
+    }
+
+    /* Tombol jam & mode */
+    .top-tools {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    #clock {
+      font-weight: bold;
+      color: #fff;
+      background: #ffb6b9;
+      padding: 8px 14px;
+      border-radius: 8px;
+    }
+
+    #langSelect, #toggleDark {
+      border: none;
+      background-color: #f78fb3;
+      color: white;
+      border-radius: 6px;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #langSelect:hover, #toggleDark:hover {
+      background-color: #e84393;
+    }
+
+    .content {
+      margin: 30px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+    }
+
+    .catalog {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .catalog h2 {
+      color: #e84393;
+      margin-bottom: 20px;
+    }
+
+    .catalog-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .product-card {
+      width: 250px;
+      background-color: #ffe3ec;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding-bottom: 15px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px 5px 0 0;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      color: #c9184a;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      padding: 0 10px;
+      color: #444;
+    }
+
+    .btn {
+      background-color: #f78fb3;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e84393;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background-color: #c7660a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* 🌙 Dark Mode */
+    .dark-mode {
+      background-color: #2c2c2c;
+      color: #f5f5f5;
+    }
+
+    .dark-mode header,
+    .dark-mode footer,
+    .dark-mode .navbar {
+      background-color: #3b3b3b;
+    }
+
+    .dark-mode .product-card {
+      background-color: #444;
+      color: #eee;
+    }
+
+    .dark-mode .btn {
+      background-color: #777;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <h1 id="title">GlowSkin Beauty</h1>
+    <p id="tagline">Rawat Kulitmu, Tunjukkan Cahayamu</p>
+  </header>
+
+  <div class="top-tools">
+    <div id="clock">00:00:00</div>
+    <button id="toggleDark">🌙</button>
+    <select id="langSelect">
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </div>
+
+  <nav class="navbar">
+  <a href="#about">Tentang Kami</a>
+  <a href="#produk">Produk</a>
+  <a href="#Faq.html" target="_blank">FAQ</a>
+  <a href="#Form_validasion.html" target="_blank">Form validasion</a>
+  <a href="#kontak">Kontak</a>
+  <a href="#promo"> Promo</a>
+</nav>
+
+<section id="about" class="about-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Gambar ilustrasi skincare -->
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+       <img src="/asset/bacgrd.webp" alt="GlowSkin Beauty"> <class="img-fluid rounded-4 shadow-sm" style="max-height: 350px; object-fit: cover;">
+      </div>
+
+      <!-- Teks Tentang Kami -->
+      <div class="col-md-6">
+        <h2 class="fw-bold text-pink mb-3">Tentang GlowSkin Beauty</h2>
+        <p class="lead" style="color:#555;">
+          GlowSkin Beauty hadir untuk menemani perjalananmu menuju kulit sehat, cerah, dan bercahaya alami.  
+          Kami percaya bahwa setiap kulit memiliki cerita, dan setiap orang berhak mendapatkan perawatan terbaik.
+        </p>
+        <p style="color:#666;">
+          Dengan menghadirkan rangkaian produk dari <b>Skintific</b>, <b>G2G</b>, dan <b>Laneige</b>, kami berkomitmen menyediakan solusi skincare yang aman, efektif, dan terpercaya.  
+          Setiap produk dipilih dengan hati-hati, mengutamakan bahan aktif yang lembut namun memberi hasil nyata bagi kulitmu.
+        </p>
+        <p style="color:#666;">
+          GlowSkin bukan sekadar toko skincare — kami adalah tempatmu untuk belajar mencintai diri sendiri lewat rutinitas sederhana setiap hari. 
+        </p>
+        <a href="#produk" class="btn btn-lg mt-2" style="background-color:#f78fb3; color:white; border-radius:10px;">Lihat Produk Kami</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="catalog" id="produk">
+    <h2>Brand Skincare Populer</h2>
+    <div class="catalog-container">
+      <div class="product-card">
+       <img src="/asset/p1.jpeg" alt="Scintific">
+        <h3>Scintific</h3>
+        <p>Perawatan aktif dengan bahan klinis terpercaya.</p>
+        <a href="#scintific" class="btn">Detail</a>
+      </div>
+
+      <div class="product-card">
+       <img src="/asset/p2.jpeg" alt="Glad2Glow">
+        <h3>Glad2Glow</h3>
+        <p>Kelembutan alami untuk kulitmu.</p>
+        <a href="#g2g" class="btn">Detail</a>
+      </div>
+
+      <div class="product-card">
+        <img src="/asset/p3.jpeg" alt="Laneige">
+        <h3>Laneige</h3>
+        <p>Kelembapan dan keanggunan kulit wajah.</p>
+        <a href="#laneige" class="btn">Detail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produk Detail -->
+  <section class="catalog" id="scintific">
+    <h2>Produk Skintific</h2>
+    <div class="catalog-container">
+      <div class="product-card"><img src="/asset/s1.jpeg"><h3>Cream</h3><p>Rp.120.000</p></div>
+      <div class="product-card"><img src="/asset/s2.jpeg"><h3>Serum</h3><p>Rp.150.000</p></div>
+      <div class="product-card"><img src="/asset/s3.jpeg"><h3>Toner</h3><p>Rp.180.000</p></div>
+      <div class="product-card"><img src="/asset/a5.jpeg"><h3>mask</h3><p>Rp.130.000</p></div>
+      <div class="product-card"><img src="/asset/s6.jpeg"><h3>Sunscreen</h3><p>Rp.80.000</p></div>
+    </div>
+  </section>
+
+  <section class="catalog" id="g2g">
+    <h2>Produk Glad2Glow</h2>
+    <div class="catalog-container">
+      <div class="product-card"><img src="/asset/g1.jpeg"><h3>Face Wash</h3><p>Rp.90.000</p></div>
+      <div class="product-card"><img src="/asset/g2.jpeg"><h3>Serum Glow</h3><p>Rp.110.000</p></div>
+      <div class="product-card"><img src="/asset/g3.jpeg"><h3>Night Cream</h3><p>Rp.130.000</p></div>
+      <div class="product-card"><img src="/asset/g4.jpeg"><h3>Toner</h3><p>Rp.80.000</p></div>
+      <div class="product-card"><img src="/asset/g5.jpeg"><h3>Sunscreen</h3><p>Rp.80.000</p></div>
+    </div>
+  </section>
+
+  <section class="catalog" id="laneige">
+    <h2>Produk Laneige</h2>
+    <div class="catalog-container">
+      <div class="product-card"><img src="/asset/l1.jpeg"><h3>Sleeping Mask</h3><p>Rp.250.000</p></div>
+      <div class="product-card"><img src="/asset/l2.jpeg"><h3>Hydra Cream</h3><p>Rp.230.000</p></div>
+      <div class="product-card"><img src="/asset/l3.jpeg"><h3>Water Bank Serum</h3><p>Rp.300.000</p></div>
+      <div class="product-card"><img src="/asset/l5.jpeg"><h3>Serum</h3><p>Rp.80.000</p></div>
+      <div class="product-card"><img src="/asset/l4.jpeg"><h3>Sunscreen</h3><p>Rp.80.000</p></div>
+    </div>
+  </section>
+
+  <section class="catalog" id="promo">
+  <h2> Promo Spesial Bulan Ini </h2>
+  <div class="catalog-container">
+    <div class="product-card">
+      <img src="/asset/p1.jpeg" alt="Promo Skintific">
+      <h3>Diskon 20% Skintific Series</h3>
+      <p>Berlaku hingga 30 November 2025.</p>
+    </div>
+    <div class="product-card">
+      <img src="/asset/p2.jpeg" alt="Promo G2G">
+      <h3>Gratis Ongkir untuk Glad2Glow</h3>
+      <p>Khusus pemesanan di atas Rp150.000</p>
+    </div>
+    <div class="product-card">
+      <img src="/asset/p3.jpeg" alt="Promo Laneige">
+      <h3>Laneige Set – Buy 1 Get 1 Mask</h3>
+      <p>Persediaan terbatas!</p>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5" id="upload">
+    <h3>Upload Bukti Pembayaran</h3>
+    <input class="form-control" type="file">
+  </section>
+
+  <footer id="kontak">
+    <p> Kontak:082276623253 glowskinbeauty@gmail.com | Instagram: @glowskin.id</p>
+    <p>&copy; 2025 GlowSkin Beauty. All Rights Reserved.</p>
+    <p><b>NIM:</b> A12.2024.07225 | <b> Nama:</b> Shindy Novryanti Br Munthe</p>
+     <div class="text-center my-4">
+   
+   <div class="text-center my-4">
+  <button onclick="scrollToTop()" class="btn btn-outline-danger">⬆ Kembali ke Atas</button>
+   </div>
+  </footer>
+
+  <script>
+    // 🕒 Jam Real-Time
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent =
+        now.toLocaleTimeString("id-ID", { hour12: false });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 🌙 Dark Mode
+    document.getElementById("toggleDark").onclick = () => {
+      document.body.classList.toggle("dark-mode");
+    };
+
+    // 🌍 Translate Bahasa
+    document.getElementById("langSelect").addEventListener("change", (e) => {
+      const lang = e.target.value;
+      const title = document.getElementById("title");
+      const tagline = document.getElementById("tagline");
+      const aboutTitle = document.getElementById("aboutTitle");
+      const aboutText = document.getElementById("aboutText");
+
+      if (lang === "en") {
+        title.textContent = "GlowSkin Beauty";
+        tagline.textContent = "Nurture Your Skin, Reveal Your Glow";
+        aboutTitle.textContent = "About Us";
+        aboutText.textContent =
+          "GlowSkin Beauty offers skincare products from top brands like Skintific, G2G, and Laneige. We believe every skin is unique and deserves personalized care.";
+      } else {
+        title.textContent = "GlowSkin Beauty";
+        tagline.textContent = "Rawat Kulitmu, Tunjukkan Cahayamu";
+        aboutTitle.textContent = "Tentang Kami";
+        aboutText.textContent =
+          "GlowSkin Beauty adalah toko skincare yang menghadirkan produk perawatan kulit dari brand terbaik seperti Skintific, G2G, dan Laneige. Kami percaya setiap kulit itu unik, dan berhak mendapatkan perawatan terbaik.";
+      }
+    });
+
+     window.addEventListener("scroll", () => {
+     document.querySelectorAll(".fade-in").forEach((el) => {
+     const pos = el.getBoundingClientRect().top;
+     if (pos < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+  });
+
+  </script>
+
+</body>
+</html>

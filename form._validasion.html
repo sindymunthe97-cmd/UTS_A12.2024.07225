@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan | GlowSkin Beauty</title>
+  <link rel="stylesheet" href="asset/css/style04.css">
+  <style>
+    body {
+      background-color: #86172d;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgb(210, 98, 98);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #e2b4cb;
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #f78fb3;
+      color: rgb(216, 95, 95);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e84393;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Form Pemesanan Produk</h2>
+    <form id="orderForm" onsubmit="return validateForm()">
+      <label>Nama Lengkap</label>
+      <input type="text" id="nama" placeholder="Masukkan nama Anda">
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="contoh@gmail.com">
+
+      <label>Pilih Produk</label>
+      <select id="produk">
+        <option value="">-- Pilih Produk --</option>
+        <option value="Scintific">Scintific</option>
+        <option value="Glad2Glow">Glad2Glow</option>
+        <option value="Laneige">Laneige</option>
+      </select>
+
+      <label>Jumlah</label>
+      <input type="number" id="jumlah" min="1" placeholder="Masukkan jumlah">
+
+      <label>Alamat Pengiriman</label>
+      <textarea id="alamat" rows="3"></textarea>
+
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      const nama = document.getElementById('nama').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const produk = document.getElementById('produk').value;
+      const jumlah = document.getElementById('jumlah').value;
+      const alamat = document.getElementById('alamat').value.trim();
+
+      if (!nama || !email || !produk || !jumlah || !alamat) {
+        alert(' Semua kolom wajib diisi!');
+        return false;
+      }
+      alert(` Terima kasih ${nama}! Pesanan Anda untuk ${produk} (${jumlah} pcs) telah dikirim.`);
+      return true;
+    }
+  </script>
+
+  <div class="text-center my-4">
+  <a href="index.html" class="btn btn-outline-danger">⬅ Kembali ke Menu Awal</a>
+</div>
+
+</body>
+</html>
